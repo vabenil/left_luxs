@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Main Page</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.css">
+        <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+        <style>
+            html, body {
+                height: 100%;
+            }
+            body {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            .horizontal-scroll-view-container {
+                white-space: nowrap;
+                overflow: auto;
+            }
+            .horizontal-scroll-item {
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body class="has-navbar-fixed-top has-navbar-fixed-bottom">
+        <!-- Top Navbar -->
+        <nav class="level navbar is-fixed-top has-shadow is-mobile">
+            <div class="level-left">
+                <div class="level-item">
+                    <button class="icon tag is-large m-2">
+                        <i class="fa fa-angle-left fa-lg"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="level-right">
+                <div class="level-item">
+                    <button class="icon is-large">
+                        <i class="fa fa-user fa-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="section">
+            <div class="box">
+                <h2 class="title has-text-centered is-5">Previous Places</h2>
+                <div class="columns horizontal-scroll-view-container is-mobile">
+                    <div class="column is-4">
+                        <div class="box p-3">
+                            <figure class="image">
+                                <img src="https://bulma.io/assets/images/placeholders/128x128.png"/>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        <div class="box p-3">
+                            <figure class="image">
+                                <img src="https://bulma.io/assets/images/placeholders/128x128.png"/>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        <div class="box p-3">
+                            <figure class="image">
+                                <img src="https://bulma.io/assets/images/placeholders/128x128.png"/>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        <div class="box p-3">
+                            <figure class="image">
+                                <img src="https://bulma.io/assets/images/placeholders/128x128.png"/>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        <div class="box p-3">
+                            <figure class="image">
+                                <img src="https://bulma.io/assets/images/placeholders/128x128.png"/>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Grid -->
+        <div class="section">
+            <h2 class="title has-text-centered is-5">Close to You</h2>
+            <div class="fixed-grid has-2-cols-mobile has-4-cols-tablet">
+                <div class="grid">
+                    <div class="cell">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img
+                                        src="https://bulma.io/assets/images/placeholders/128x128.png"
+                                        alt="Placeholder image"
+                                        />
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div class="content">
+                                    Restaurant 6
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cell">
+                        <div class="cell">
+                            <div class="card">
+                                <div class="card-image">
+                                    <figure class="image is-4by3">
+                                        <img
+                                            src="https://bulma.io/assets/images/placeholders/128x128.png"
+                                            alt="Placeholder image"
+                                            />
+                                    </figure>
+                                </div>
+                                <div class="card-content">
+                                    <div class="content">
+                                        Restaurant 8
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cell">
+                        <div class="cell">
+                            <div class="card">
+                                <div class="card-image">
+                                    <figure class="image is-4by3">
+                                        <img
+                                            src="https://bulma.io/assets/images/placeholders/128x128.png"
+                                            alt="Placeholder image"
+                                            />
+                                    </figure>
+                                </div>
+                                <div class="card-content">
+                                    <div class="content">
+                                        Bar 3
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cell">
+                        <div class="cell">
+                            <div class="card">
+                                <div class="card-image">
+                                    <figure class="image is-4by3">
+                                        <img
+                                            src="https://bulma.io/assets/images/placeholders/128x128.png"
+                                            alt="Placeholder image"
+                                            />
+                                    </figure>
+                                </div>
+                                <div class="card-content">
+                                    <div class="content">
+                                        Hotel 1
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cell">
+                        <div class="cell">
+                            <div class="card">
+                                <div class="card-image">
+                                    <figure class="image is-4by3">
+                                        <img
+                                            src="https://bulma.io/assets/images/placeholders/128x128.png"
+                                            alt="Placeholder image"
+                                            />
+                                    </figure>
+                                </div>
+                                <div class="card-content">
+                                    <div class="content">
+                                        Hotel 3
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cell">
+                        <div class="cell">
+                            <div class="card">
+                                <div class="card-image">
+                                    <figure class="image is-4by3">
+                                        <img
+                                            src="https://bulma.io/assets/images/placeholders/128x128.png"
+                                            alt="Placeholder image"
+                                        />
+                                    </figure>
+                                </div>
+                                <div class="card-content">
+                                    <div class="content">
+                                        Bar 2
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navbar -->
+        <nav class="level navbar is-fixed-bottom has-shadow is-mobile">
+            <div class="level-item">
+                <button class="icon is-large">
+                    <i class="fa fa-map fa-2x"></i>
+                </button>
+            </div>
+        </nav>
+    </body>
+</html>
