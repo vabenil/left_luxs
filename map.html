@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+<head data-theme="light">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Map View</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.css">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .map-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            cursor: grab;
+        }
+        .map-image:active {
+            cursor: grabbing;
+        }
+        .zoom-buttons {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .zoom-button {
+            margin-bottom: 5px;
+            background: white;
+            border: 1px solid #ddd;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="has-navbar-fixed-top has-navbar-fixed-bottom">
+    <!-- Top Navbar -->
+    <nav class="level navbar is-fixed-top has-shadow is-mobile">
+        <div class="level-left">
+            <form class="level-item" action="main.html">
+                <button class="icon tag is-large m-2">
+                    <i class="fa fa-angle-left fa-lg"></i>
+                </button>
+            </form>
+        </div>
+        <div class="level-right">
+            <div class="level-item">
+                <button class="icon is-large">
+                    <i class="fa fa-user fa-lg"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="map-container" id="map-container">
+        <img src="resources/map.jpg" alt="Map" class="map-image" id="map-image">
+        <div class="zoom-buttons">
+            <div class="zoom-button" id="zoom-in">+</div>
+            <div class="zoom-button" id="zoom-out">-</div>
+        </div>
+    </div>
+
+    <script>
+        const mapContainer = document.getElementById('map-container');
+        const mapImage = document.getElementById('map-image');
+        const zoomInButton = document.getElementById('zoom-in');
+        const zoomOutButton = document.getElementById('zoom-out');
+
+        let scale = 1;
+        let translateX = 0;
+        let translateY = 0;
+        let startX, startY;
+
+        mapImage.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
+
+        mapImage.addEventListener('mousedown', (e) => {
+            startX = e.pageX - translateX;
+            startY = e.pageY - translateY;
+            mapContainer.addEventListener('mousemove', moveMap);
+        });
+
+        window.addEventListener('mouseup', () => {
+            mapContainer.removeEventListener('mousemove', moveMap);
+        });
+
+        function moveMap(e) {
+            translateX = e.pageX - startX;
+            translateY = e.pageY - startY;
+            mapImage.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
+        }
+
+        zoomInButton.addEventListener('click', () => {
+            scale += 0.1;
+            mapImage.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
+        });
+
+        zoomOutButton.addEventListener('click', () => {
+            if (scale > 0.1) {
+                scale -= 0.1;
+                mapImage.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
